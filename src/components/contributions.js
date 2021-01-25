@@ -8,7 +8,8 @@ import BlueGrey from '@material-ui/core/colors/blueGrey';
 
 const useStyles = makeStyles((theme) => ({
     item: {
-        padding: theme.spacing(4),
+        padding: theme.spacing(2),
+        borderRadius:8,
     },
 }));
 

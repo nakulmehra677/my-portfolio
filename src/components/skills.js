@@ -102,7 +102,8 @@ export default function Skills() {
                             <Card elevation={0} className={classes.item3}>
                                 <CardContent>
                                     {itemTitle('Databases')}
-                                    {itemContent('')}
+                                    {itemContent('No SQL', 'This database is best choice when we want to fetch data in an single snapshot. The data may be stored at multiple places and should be synchronized. I have used Firestore for storing data for my projects.')}
+                                    {itemContent('SQL', 'This relational database is the most popular database. I use this when the number of columns for data are fixed and need not to change in future or data updates are required on frequently basis.')}
                                 </CardContent>
                             </Card>
                         </Grid><Grid item md={6} sm={6} xs={12}>
