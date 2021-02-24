@@ -4,12 +4,14 @@ import Title from './subComponents/title'
 import Grey from '@material-ui/core/colors/grey';
 import { makeStyles } from '@material-ui/core/styles';
 import BlueGrey from '@material-ui/core/colors/blueGrey';
+import { isMobile } from "react-device-detect";
+
 
 
 const useStyles = makeStyles((theme) => ({
     item: {
         padding: theme.spacing(2),
-        borderRadius:8,
+        borderRadius: 0,
     },
 }));
 
@@ -17,14 +19,31 @@ export default function Contributions() {
 
     const classes = useStyles();
 
+    let paddingVertical, paddingHorizontal;
+    if (isMobile) {
+        paddingVertical = 8;
+        paddingHorizontal = 1;
+    } else {
+        paddingVertical = 4;
+        paddingHorizontal = 8;
+    }
+
+    let padding, spacing;
+    if (isMobile) {
+        padding = 1;
+        spacing = 2;
+    } else {
+        padding = 4;
+        spacing = 4
+    }
+
     return (
-        <Box style={{ backgroundColor: BlueGrey[50] }}  paddingTop={8} paddingBottom={8}>
-            <Container maxWidh="lg">
+        <Box style={{ backgroundColor: BlueGrey[50] }} pt={paddingVertical} pb={paddingVertical} pl={paddingHorizontal} pr={paddingHorizontal}>
                 <div style={{ textAlign: 'center' }}>
                     <Title title="Contributions" />
                 </div>
-                <Box paddingTop={4} paddingBottom={4}>
-                    <Grid container spacing={4}>
+                <Box p={padding}>
+                    <Grid container spacing={spacing}>
                         <Grid item md={4} sm={6} xs={12}>
                             <Card elevation={4} className={classes.item}>
                                 <CardContent>
@@ -56,7 +75,7 @@ export default function Contributions() {
                             </Card>
                         </Grid>
                         <Grid item md={4} sm={6} xs={12}>
-        
+
                             <Card elevation={4} className={classes.item}>
                                 <CardContent>
                                     <Typography variant="h5" component="h2">
@@ -73,7 +92,6 @@ export default function Contributions() {
                         </Grid>
                     </Grid>
                 </Box>
-            </Container>
         </Box>
     )
 }

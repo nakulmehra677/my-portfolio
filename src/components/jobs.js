@@ -42,6 +42,8 @@ export default function Jobs() {
                                     <div className={classes.itemTitle}><b>SDE</b></div>
                                     <div className={classes.itemSubTitle}>MH Infotech Services Pvt. Ltd., New Delhi</div>
                                     <div className={classes.itemPassout}>(June 2019 - Present)</div>
+
+                                    <p><a target="_blank" href="https://shoperkart.in">Shoperkart</a></p>
                                 </div>
                             </div>
                         </Grid>

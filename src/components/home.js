@@ -4,6 +4,8 @@ import ImageNakul from "../images/nakul.jpg"
 import SubTitle from './subComponents/subTitle'
 import { Button, ThemeProvider, Container } from '@material-ui/core';
 import Title from './subComponents/title'
+import { isMobile } from "react-device-detect";
+
 
 export default function Home() {
 
@@ -12,7 +14,7 @@ export default function Home() {
             <Container maxWidh="lg">
                 <Grid container spacing={0}>
                     <Grid item md={6}>
-                        <Box p={16}>
+                        <Box p={isMobile ? 4 : 16}>
                             <Title title="Hi, I am Nakul" />
                             <SubTitle title="A software developer and freelancer" />
                         </Box>

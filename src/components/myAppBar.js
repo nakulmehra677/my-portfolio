@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import { BrowserView } from "react-device-detect";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -58,13 +60,15 @@ export default function MyAppBar(props) {
             <Typography variant="h6" color="primary" className={classes.title}>
               <b>Nakul's Portfolio</b>
             </Typography>
-            <Button color="inherit">Home</Button>
-            <Button color="inherit">About</Button>
-            <Button color="inherit">Qualifications</Button>
-            <Button color="inherit">Skills</Button>
-            <Button color="inherit">Contributions</Button>
-            <Button color="inherit">Work</Button>
-            <Button color="inherit">Contact</Button>
+            <BrowserView>
+              <Button color="inherit">Home</Button>
+              <Button color="inherit">About</Button>
+              <Button color="inherit">Qualifications</Button>
+              <Button color="inherit">Skills</Button>
+              <Button color="inherit">Contributions</Button>
+              <Button color="inherit">Work</Button>
+              <Button color="inherit">Contact</Button>
+            </BrowserView>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
